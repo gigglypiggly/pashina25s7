@@ -19,5 +19,9 @@ div {
     margin: auto;
     align-items: center;
     justify-content: center;
+    /* I converted online from 18 px to rem */
+    font-size: 1.125rem;
+    background-color: red;
+    color: white;
 
 }
