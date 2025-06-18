@@ -72,3 +72,8 @@ body {
     display: table-cell;
     width: 70%;
   }
+
+  aside {
+    display: table-cell;
+    width: 30%;
+  }
