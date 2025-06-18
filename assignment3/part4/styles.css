@@ -49,3 +49,26 @@ body {
   .feature {
       width: 200px;
   }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  nav ul li {
+    flex: 1;
+  }
+
+  nav {
+    position: sticky;
+    top: 10px;
+  }
+
+  img {
+    float: left;
+    margin-right: 20px;
+  }
+  main article {
+    display: table-cell;
+    width: 70%;
+  }
