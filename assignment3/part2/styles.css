@@ -12,3 +12,12 @@ html {
 
 /* Your CSS below here */
 
+div {
+    display: flex;
+    width: 200px;
+    height: 150px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+
+}
