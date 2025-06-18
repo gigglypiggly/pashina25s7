@@ -47,4 +47,9 @@ ul {
   border: 5px solid purple;
 }
 
-
+a {
+  &:hover {
+    color: green;
+    text-decoration: underline;
+  }
+}
