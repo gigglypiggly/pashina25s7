@@ -77,3 +77,16 @@ h1, h2 {
   font-weight: bolder;
   letter-spacing: 4px;
 }
+
+
+h1 {
+  display: flex;
+  font-size: 35px;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  font-size: 25px;
+}
+
