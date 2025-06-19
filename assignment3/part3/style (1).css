@@ -43,3 +43,10 @@ header, footer {
 }
 
 /* WRITE YOUR CODE BELOW HERE */
+@font-face {
+  font-family: courierPrime;
+  src: url('https://www.1001fonts.com/courier-prime-font.html');
+}
+section p {
+  font-family: courierPrime;
+}
