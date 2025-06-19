@@ -44,9 +44,36 @@ header, footer {
 
 /* WRITE YOUR CODE BELOW HERE */
 @font-face {
-  font-family: courierPrime;
-  src: url('https://www.1001fonts.com/courier-prime-font.html');
+    font-family: 'courier_primeregular';
+    src: url('webfontkit-20250619-191515/courier_prime-webfont.woff2') format('woff2'),
+         url('webfontkit-20250619-191515/courier_prime-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
-section p {
-  font-family: courierPrime;
+
+@font-face {
+    font-family: 'wasted_vindeyregular';
+    src: url('webfontkit-20250619-191515/wasted-vindey-webfont.woff2') format('woff2'),
+         url('webfontkit-20250619-191515/wasted-vindey-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+  font-size: 10px;
+  line-height: 1.3;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+}
+section {
+  font-family: 'wasted_vindeyregular';
+  font-weight: bold;
+}
+
+h1, h2 {
+  font-family: 'wasted_vindeyregular';
+  font-weight: bolder;
+  letter-spacing: 4px;
 }
