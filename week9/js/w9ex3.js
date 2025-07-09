@@ -5,4 +5,4 @@ function showOutput() {
     document.querySelector('#output').textContent = "Hello " + name + "!";
 }
 
-document.getElementById("btn").addEventListener("click", showOutput);;
+document.getElementById("btn").addEventListener("click", showOutput);
