@@ -9,3 +9,9 @@ function showGreetingMessage() {
     let name = window.prompt("What is your name?");
     window.alert("Hello " + name + "!");
 }
+function reset() {
+    window.alert("No resetting allowed!");
+}
+document.getElementById("btn").addEventListener("click", showGreetingMessage);
+document.getElementById("reset").addEventListener("mouseover", reset);
+document.getElementById("reset").addEventListener("click", reset);
