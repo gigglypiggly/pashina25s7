@@ -1,3 +1,7 @@
+// Name: Altai Pashin
+// Student number: 101007054
+// Date: 2025-07-29
+// Description: JavaScript file for the silly story generator for part 1 of assignment 4
 
 const customName = document.getElementById('customname');
 const randomize = document.querySelector('.randomize');
