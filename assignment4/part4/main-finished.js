@@ -161,14 +161,17 @@ while (balls.length < 25) {
     randomRGB(),
     size
   );
-
   balls.push(ball);
+
 }
 
+const evil = new evilShape(
+  random(0 + 10, width - 10),
+  random(0 + 10, height - 10)
+);
 function loop() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
   ctx.fillRect(0, 0, width, height);
-  const evil = new evilShape(width / 2, height / 2);
 
   for (const ball of balls) {
     if (ball.exists) {
