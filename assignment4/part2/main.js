@@ -22,10 +22,22 @@ const imageDescriptions = [
 ];
 
 /* Looping through images */
-
-const newImage = document.createElement('img');
-newImage.setAttribute('src', imageFiles[0]);
-newImage.setAttribute('alt', imageDescriptions[0]);
-thumbBar.appendChild(newImage);
-
+for (let i = 0; i < imageFiles.length; i++) {
+    const newImage = document.createElement('img');
+    newImage.setAttribute('src', imageFiles[i]);
+    newImage.setAttribute('alt', imageDescriptions[i]);
+    newImage.addEventListener('click', function() {
+        displayedImage.setAttribute('src', imageFiles[i]);
+        displayedImage.setAttribute('alt', imageDescriptions[i]);
+    });
+    thumbBar.appendChild(newImage);
+}
 /* Wiring up the Darken/Lighten button */
+btn.addEventListener('click', function() {
+    overlay.classList.toggle('active');
+    if (overlay.classList.contains('active')) {
+        btn.textContent = 'Lighten';
+    } else {
+        btn.textContent = 'Darken';
+    }
+});
