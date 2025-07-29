@@ -169,6 +169,9 @@ const evil = new evilShape(
   random(0 + 10, width - 10),
   random(0 + 10, height - 10)
 );
+// stores reference to p tag
+const ballCountDisplay = document.querySelector("p");
+
 function loop() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
   ctx.fillRect(0, 0, width, height);
@@ -183,7 +186,10 @@ function loop() {
   evil.draw();
   evil.checkBounds();
   evil.collisionDetect();
-  
+
+  // Update the ball count display
+  const count = balls.filter(ball => ball.exists).length;
+  ballCountDisplay.textContent = `Ball Count: ${count}`;
 
   requestAnimationFrame(loop);
 }
