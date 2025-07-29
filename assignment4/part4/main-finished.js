@@ -57,6 +57,7 @@ class evilShape extends Shape {
 });
   }
   
+  
   draw() {
     ctx.beginPath();
     ctx.lineWidth = 3;
@@ -179,8 +180,10 @@ function loop() {
   evil.draw();
   evil.checkBounds();
   evil.collisionDetect();
+  
 
   requestAnimationFrame(loop);
 }
+
 
 loop();
