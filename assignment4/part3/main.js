@@ -1,3 +1,9 @@
+// Name: Altai Pashin
+// Student number: 101007054
+// file: main.js
+// Date: 2025-07-29
+// Description: JavaScript file for the silly story generator for part 2 of assignment 4
+
 // setup canvas
 
 const canvas = document.querySelector("canvas");
