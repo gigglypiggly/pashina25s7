@@ -1,3 +1,9 @@
+// Name: Altai Pashin
+// Student number: 101007054
+// file: main-finished.js
+// Date: 2025-07-29
+// Description: JavaScript file for the silly story generator for part 4 of assignment 4
+
 // set up canvas
 
 const canvas = document.querySelector("canvas");
@@ -17,8 +23,8 @@ function random(min, max) {
 function randomRGB() {
   return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
 }
-
-class Ball {
+// shape class
+class Shape {
   constructor(x, y, velX, velY, color, size) {
     this.x = x;
     this.y = y;
@@ -26,6 +32,75 @@ class Ball {
     this.velY = velY;
     this.color = color;
     this.size = size;
+  }
+}
+
+class evilShape extends Shape {
+  constructor(x, y) { 
+    super(x, y, 20, 20, 'white', 10);
+    this.exists = true; // default to true if not 
+    window.addEventListener("keydown", (e) => {
+  switch (e.key) {
+    case "a":
+      this.x -= this.velX;
+      break;
+    case "d":
+      this.x += this.velX;
+      break;
+    case "w":
+      this.y -= this.velY;
+      break;
+    case "s":
+      this.y += this.velY;
+      break;
+  }
+});
+  }
+  
+  draw() {
+    ctx.beginPath();
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = this.color;
+    ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+    ctx.stroke();
+  }
+  checkBounds() {
+    if (this.x + this.size >= width) {
+      this.x = width - this.size;
+    }
+
+    if (this.x - this.size <= 0) {
+      this.x = this.size;
+    }
+
+    if (this.y + this.size >= height) {
+      this.y = height - this.size;
+    }
+
+    if (this.y - this.size <= 0) {
+      this.y = this.size;
+    }
+  }
+  collisionDetect() {
+    for (const ball of balls) {
+      if (ball.exists) {
+        const dx = this.x - ball.x;
+        const dy = this.y - ball.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < this.size + ball.size) {
+          ball.exists = false; // remove the ball
+        }
+      }
+    }
+  }
+}
+
+// Ball class extending Shape
+class Ball extends Shape {
+  constructor(x, y, velX, velY, color, size, exists) {
+    super(x, y, velX, velY, color, size);
+    this.exists = exists || true; // default to true if not provided
   }
 
   draw() {
@@ -58,7 +133,7 @@ class Ball {
 
   collisionDetect() {
     for (const ball of balls) {
-      if (!(this === ball)) {
+      if (!(this === ball) && ball.exists) {
         const dx = this.x - ball.x;
         const dy = this.y - ball.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
@@ -92,12 +167,18 @@ while (balls.length < 25) {
 function loop() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
   ctx.fillRect(0, 0, width, height);
+  const evil = new evilShape(width / 2, height / 2);
 
   for (const ball of balls) {
-    ball.draw();
-    ball.update();
-    ball.collisionDetect();
+    if (ball.exists) {
+      ball.draw();
+      ball.update();
+      ball.collisionDetect();
+    }
   }
+  evil.draw();
+  evil.checkBounds();
+  evil.collisionDetect();
 
   requestAnimationFrame(loop);
 }

@@ -2,7 +2,7 @@
 // Student number: 101007054
 // file: main.js
 // Date: 2025-07-29
-// Description: JavaScript file for the silly story generator for part 2 of assignment 4
+// Description: JavaScript file for the silly story generator for part 3 of assignment 4
 
 // setup canvas
 
