@@ -1,3 +1,9 @@
+// Name: Altai Pashin
+// Student number: 101007054
+// file: main.js
+// Date: 2025-08-08
+// Description: JavaScript file for assignment 5
+
 // functionality for showing/hiding the comments section
 
 const showHideBtn = document.querySelector('.show-hide');
